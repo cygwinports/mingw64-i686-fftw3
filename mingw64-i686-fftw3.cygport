@@ -24,7 +24,7 @@ src_compile() {
 	do
 		case $prec in
 		quad*)
-			gcclibdir="${CC} -print-file-name=libquadmath.dll.a"
+			gcclibdir=$(${CC} -print-file-name=libquadmath.dll.a)
 			LDFLAGS+=" -L${gcclibdir%/*}"
 			;;
 		esac
